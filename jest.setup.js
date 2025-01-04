@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockReturnValue({
@@ -7,4 +7,4 @@ jest.mock('next/router', () => ({
     replace: jest.fn(),
     isReady: true,
   }),
-}));
+}))

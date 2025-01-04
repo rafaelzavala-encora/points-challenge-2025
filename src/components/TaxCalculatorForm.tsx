@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import { Box, Button, MenuItem, Select, TextField, Typography } from '@mui/material';
+import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import {
+  Box,
+  Button,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from '@mui/material'
 
 const TaxCalculatorForm = () => {
-  const [income, setIncome] = useState('');
-  const [year, setYear] = useState('2022');
-  const router = useRouter();
+  const [income, setIncome] = useState('')
+  const [year, setYear] = useState('2022')
+  const router = useRouter()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    router.push(`/results?income=${income}&year=${year}`);
-  };
+    e.preventDefault()
+    router.push(`/results?income=${income}&year=${year}`)
+  }
 
   return (
-    <Box component="form" aria-label="Tax Calculator Form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Box
+      component="form"
+      aria-label="Tax Calculator Form"
+      onSubmit={handleSubmit}
+      sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+    >
       <Typography variant="h4" gutterBottom>
         Income Tax Calculator
       </Typography>
@@ -30,7 +42,7 @@ const TaxCalculatorForm = () => {
         onChange={(e) => setYear(e.target.value)}
         fullWidth
         displayEmpty
-        inputProps={{ 'aria-label': 'Year'}}
+        inputProps={{ 'aria-label': 'Year' }}
         required
       >
         <MenuItem value="2019">2019</MenuItem>
@@ -42,7 +54,7 @@ const TaxCalculatorForm = () => {
         Calculate Tax
       </Button>
     </Box>
-  );
-};
+  )
+}
 
-export default TaxCalculatorForm;
+export default TaxCalculatorForm

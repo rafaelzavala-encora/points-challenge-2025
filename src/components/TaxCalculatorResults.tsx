@@ -1,10 +1,19 @@
-import React from 'react';
-import numeral from 'numeral';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper } from '@mui/material';
-import { TaxCalculationResult } from '../utils/types';
+import React from 'react'
+import numeral from 'numeral'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+  Paper,
+} from '@mui/material'
+import { TaxCalculationResult } from '../utils/types'
 
 interface ResultsProps {
-  results: TaxCalculationResult;
+  results: TaxCalculationResult
 }
 
 const TaxCalculatorResults = ({ results }: ResultsProps) => (
@@ -33,13 +42,15 @@ const TaxCalculatorResults = ({ results }: ResultsProps) => (
             <TableRow key={idx}>
               <TableCell>{b.range}</TableCell>
               <TableCell>{Number(b.rate * 100).toFixed(2)}%</TableCell>
-              <TableCell align="right">{numeral(b.tax).format('$0,0.00')}</TableCell>
+              <TableCell align="right">
+                {numeral(b.tax).format('$0,0.00')}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
   </Paper>
-);
+)
 
-export default TaxCalculatorResults;
+export default TaxCalculatorResults
